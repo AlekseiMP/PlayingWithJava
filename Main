@@ -1,0 +1,40 @@
+// AUTHOR: ALEKSEI MERITT-POWELL
+// EMAIL: aleksei.meritt-powell@gmail.com
+// DATE: 2024-23-7
+// PURPOSE: Gather input from user to log fitness accomplishments
+// NOTE: I am using the UtilityBelt.java from a previous class due to my limited knowledge with java currently
+/* PSEUDOCODE:
+*  print(Welcome Message)
+*  do {
+*      readChar("Would you like to log a workout? (y/n)", YyNn)
+*      switch (YyNn)
+*  } while(choice != 0)
+*
+*/
+
+public class Main {
+  public static void main(String[] args) {
+
+    char yesNo;
+
+    
+    System.out.println("WELCOME MESSAGE");
+    
+    do {
+        yesNo = UtilityBelt.readChar("Would you like to log a workout? (y/n)", "YyNn");
+        switch(yesNo) {
+            case 1:
+                System.out.println("You chose yes");
+                break;
+            case 2:
+                System.out.println("You chose no");
+                break;
+            default:
+                System.out.println("Invalid choice");
+                break;
+        }
+          
+    } while (yesNo != 0);
+    
+  }
+}
