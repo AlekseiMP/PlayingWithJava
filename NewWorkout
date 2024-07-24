@@ -1,3 +1,9 @@
+/**
+ * Represents info for a workout
+ * 
+ * @author Aleksei Meritt-Powell
+ *
+ **/
 /* UML CLASS DIAGRAM:
 -----------------------------------------
 - workoutName : String
