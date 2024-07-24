@@ -16,24 +16,28 @@ public class Main {
   public static void main(String[] args) {
 
     char yesNo;
+    NewWorkout test1 = new NewWorkout();
 
     
-    System.out.println("WELCOME MESSAGE");
+    System.out.println("Welcome to the Fitness Tracker! Here you can log individual workouts to create a workout plan.");
     
     do {
-        yesNo = UtilityBelt.readChar("Would you like to log a workout? (y/n)", "YyNn");
+        yesNo = UtilityBelt.readChar("\nWould you like to log a workout? (y/n) ", "yn");
         switch(yesNo) {
-            case 1:
-                System.out.println("You chose yes");
+            case 'y':
+                test1.setWorkoutName(UtilityBelt.readString("\nWhat is the name of the workout? ", 1, 20));
+                test1.setMuscleGroup(UtilityBelt.readString("What is the name of the targeted muscle group? ", 1, 20));
+                test1.setNumberOfSets(UtilityBelt.readInt("How many sets are in this workout? ", 1, 10));
+                test1.setNumberOfReps(UtilityBelt.readInt("How many reps are in each set? ", 1, 50));
+                test1.setExpectedDuration(UtilityBelt.readDouble("How many long is this workout supposed to take(in minutes)? ", 1, 500));
                 break;
-            case 2:
-                System.out.println("You chose no");
+            case 'n':
                 break;
             default:
                 System.out.println("Invalid choice");
                 break;
         }
-          
+          System.out.println("\nHere is your workout:\nWorkout Name: " + test1.getWorkoutName() + "\nMuscle Group: " + test1.getMuscleGroup() + "\nNumber of Sets: " + test1.getNumberOfSets() + "\nNumber of Reps: " + test1.getNumberOfReps() + "\nExpected Duration: " + test1.getExpectedDuration());
     } while (yesNo != 0);
     
   }
