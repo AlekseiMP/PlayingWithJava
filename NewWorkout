@@ -1,0 +1,125 @@
+/* UML CLASS DIAGRAM:
+-----------------------------------------
+- workoutName : String
+- muscleGroup : String
+- numberOfSets : int
+- numberOfReps : int
+- expectedDuration : double
+-----------------------------------------
++ getWorkoutName() : String
++ getMuscleGroup() : String
++ getNumberOfSets() : int
++ getNumberOfReps() : int
++ getExpectedDuration() : double
+
++ setWorkoutName() : String : void
++ setMuscleGroup() : String : void
++ setNumberOfSets() : int : void
++ setNumberOfReps() : int : void
++ setExpectedDuration() : double : void
+
++ setAll(workoutName : String, muscleGroup : String, numberOfSets : int, numberOfReps : int, expectedDuration : double) : void
+*/
+
+public class NewWorkout
+{
+  /***** INSTANCE VARIABLES *****/
+    private String workoutName;
+    private String muscleGroup;
+    private int numberOfSets;
+    private int numberOfReps;
+    private double expectedDuration;
+
+  /***** ACCESSORS *****/
+  /*
+  * Returns workoutName of calling object
+  * @return String representing workoutName
+  */ 
+  public String getWorkoutName() {
+      return this.workoutName;
+  }
+  /*
+  * Returns muscle group of calling object
+  * @return String representing muscle group
+  */ 
+    public String getMuscleGroup() {
+      return this.muscleGroup;
+  }
+  /*
+  * Returns number of sets of calling object
+  * @return int representing number of sets
+  */ 
+  public int getNumberOfSets() {
+      return this.numberOfSets;
+  }
+  /*
+  * Returns number of reps of calling object
+  * @return int representing number of reps
+  */ 
+  public int getNumberOfReps() {
+      return this.numberOfReps;
+  }
+  /*
+  * Returns expected duration of calling object
+  * @return double representing expected duration
+  */ 
+  public double getExpectedDuration() {
+      return this.expectedDuration;
+  }
+
+  /***** MUTATORS *****/
+  /*
+    * Sets workoutName to parameter value of calling objects
+    * @ param workoutName String representing last name, assume it exists and is valid
+    */
+  public void setWorkoutName(String workoutName) {
+      this.workoutName = workoutName;
+  }
+  /*
+  * Sets muscleGroup to parameter value of calling objects
+    * @ param muscleGroup String representing muscle group, assume it exists and is valid
+  */ 
+    public void setMuscleGroup(String muscleGroup) {
+      this.muscleGroup = muscleGroup;
+  }
+  /*
+  * Sets numberOfSets to parameter value of calling objects
+    * @ param numberOfSets int representing the number of sets
+  */ 
+  public void setNumberOfSets(int numberOfSets) {
+     this.numberOfSets = numberOfSets;
+  }
+  /*
+  * Sets numberOfReps to parameter value of calling objects
+    * @ param numberOfReps int representing number of reps
+  */ 
+  public void setNumberOfReps(int numberOfReps) {
+      this.numberOfReps = numberOfReps;
+  }
+  /*
+  * Sets expectedDuration to parameter value of calling objects
+    * @ param expectedDuration representing expected duration
+  */ 
+  public void setExpectedDuration(double expectedDuration) {
+      this.expectedDuration = expectedDuration;
+  }
+
+
+  /*
+  * sets all data for object
+  *
+  * @ param workoutName String representing last name, assume it exists and is valid
+  * @ param muscleGroup String representing muscle group, assume it exists and is valid
+  * @ param numberOfSets int representing number of sets
+  * @ param numberOfReps int representing number of reps
+  * @ param expectedDuration double representing expected duration
+  */
+  public void setAll(String workoutName, String givenName, int numberOfSets, int numberOfReps, double expectedDuration) {
+      this.setWorkoutName(workoutName);
+      this.setMuscleGroup(muscleGroup);
+      this.setNumberOfSets(numberOfSets);
+      this.setNumberOfReps(numberOfReps);
+      this.setExpectedDuration(expectedDuration);
+  }
+
+}
