@@ -60,6 +60,18 @@ public class Main {
             case 'y':
                 NewWorkout newWorkout = new NewWorkout();
                 newWorkout.setWorkoutName(UtilityBelt.readString("\nWhat is the name of the workout? ", 1, 20));
+
+                Boolean nameExists = false;
+                for (NewWorkout existingWorkout : workouts) {
+                if (newWorkout.getWorkoutName().equals(existingWorkout.getWorkoutName())) {
+                            nameExists = true;
+                            break;
+                        }
+                }
+                if (nameExists) {
+                    System.out.println("A workout with the same name already exists. Please enter a different name.");
+                }
+
                 newWorkout.setMuscleGroup(UtilityBelt.readString("What is the name of the targeted muscle group? ", 1, 20));
                 newWorkout.setNumberOfSets(UtilityBelt.readInt("How many sets are in this workout? ", 1, 10));
                 newWorkout.setNumberOfReps(UtilityBelt.readInt("How many reps are in each set? ", 1, 50));
