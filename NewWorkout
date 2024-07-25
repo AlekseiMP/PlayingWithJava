@@ -127,5 +127,16 @@ public class NewWorkout
       this.setNumberOfReps(numberOfReps);
       this.setExpectedDuration(expectedDuration);
   }
+  /*
+  * Prints all data for the workout
+  * @ param workoutName String representing last name, assume it exists and is valid
+  * @ param muscleGroup String representing muscle group, assume it exists and is valid
+  * @ param numberOfSets int representing number of sets
+  * @ param numberOfReps int representing number of reps
+  * @ param expectedDuration double representing expected duration
+  */
+  public String toString() {
+    return "Workout Name: " + this.workoutName + "\nMuscle Group: " + this.muscleGroup + "\nNumber of Sets: " + this.numberOfSets + "\nNumber of Reps: " + this.numberOfReps + "\nExpected Duration: " + this.expectedDuration;
+  }
 
 }
