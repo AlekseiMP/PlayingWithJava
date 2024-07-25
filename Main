@@ -58,26 +58,32 @@ public class Main {
         yesNo = UtilityBelt.readChar("\nWould you like to log a workout? (y/n) ", "yn");
         switch(yesNo) {
             case 'y':
-                NewWorkout newWorkout = new NewWorkout();
-                newWorkout.setWorkoutName(UtilityBelt.readString("\nWhat is the name of the workout? ", 1, 20));
+                // Keep asking for a workout name until a unique one is entered
+                while (true) { // Loop until a unique name is found
+                    String newWorkoutName = UtilityBelt.readString("What is the name of the workout?", 1, 20);
 
                 Boolean nameExists = false;
                 for (NewWorkout existingWorkout : workouts) {
-                if (newWorkout.getWorkoutName().equals(existingWorkout.getWorkoutName())) {
+                if (newWorkoutName.equals(existingWorkout.getWorkoutName())) {
                             nameExists = true;
-                            break;
+                            System.out.println("A workout with the same name already exists. Please enter a different name.");
+                            break; // Exit the inner loop if a duplicate is found
                         }
                 }
-                if (nameExists) {
-                    System.out.println("A workout with the same name already exists. Please enter a different name.");
-                }
+                if (!nameExists) { // If no duplicate is found
+                    NewWorkout newWorkout = new NewWorkout();
 
-                newWorkout.setMuscleGroup(UtilityBelt.readString("What is the name of the targeted muscle group? ", 1, 20));
-                newWorkout.setNumberOfSets(UtilityBelt.readInt("How many sets are in this workout? ", 1, 10));
-                newWorkout.setNumberOfReps(UtilityBelt.readInt("How many reps are in each set? ", 1, 50));
-                newWorkout.setExpectedDuration(UtilityBelt.readDouble("How many long is this workout supposed to take(in minutes)? ", 1, 500));
-                workouts.add(newWorkout);
-                break;
+                    newWorkout.setWorkoutName(newWorkoutName);
+                  newWorkout.setMuscleGroup(UtilityBelt.readString("What is the name of the targeted muscle group? ", 1, 20));
+                    newWorkout.setNumberOfSets(UtilityBelt.readInt("How many sets are in this workout? ", 1, 10));
+                    newWorkout.setNumberOfReps(UtilityBelt.readInt("How many reps are in each set? ", 1, 50));
+
+newWorkout.setExpectedDuration(UtilityBelt.readDouble("How many long is this workout supposed to take(in minutes)? ", 1, 500));
+                    workouts.add(newWorkout);
+                    break; // Exit the outer loop since a unique name is found
+                }
+            }
+            break;
             case 'n':
                 break;
             default:
@@ -89,7 +95,7 @@ public class Main {
       /***** OUTPUT SECTION *****/
       System.out.println("\nHere are your saved workouts:");
               for (NewWorkout workout : workouts) {
-                  System.out.println("\nWorkout Name: " + workout.getWorkoutName() + "\nMuscle Group: " + workout.getMuscleGroup() + "\nNumber of Sets: " + workout.getNumberOfSets() + "\nNumber of Reps: " + workout.getNumberOfReps() + "\nExpected Duration: " + workout.getExpectedDuration());
+                  System.out.println(workout.toString()); // Use toString() to print details;
               }
           }
     
