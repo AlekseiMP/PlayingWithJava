@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+public class MyProgram 
+{
+    
+  public static void main(String[] args) 
+  {
+    //create scanner object
+    Scanner scanner = new Scanner(System.in);
+      
+    //Integer scan
+    System.out.print("Integer value entered is: ");
+    int inputInt = scanner.nextInt();
+    
+    //Double scan
+    System.out.print("Double value entered is: ");
+    double inputDouble = scanner.nextDouble();
+    
+    //Char scan
+    System.out.print("Char (character) value entered is: ");
+    char inputChar = scanner.next().charAt(0);
+    
+    //Boolean scan
+    System.out.print("Boolean (true/false) value entered is: ");
+    boolean inputBoolean = scanner.nextBoolean();
+    
+    //go to next line
+    scanner.nextLine();
+    
+    //String 1 scan
+    System.out.print("String (one word) value entered is: ");
+    String inputString1 = scanner.nextLine();
+    
+    //String full scan
+    System.out.print("String (entire line) value entered is: ");
+    String inputString2 = scanner.nextLine();
+    
+    //close scanner
+    scanner.close();
+  }
+}
