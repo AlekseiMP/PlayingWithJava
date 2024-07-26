@@ -71,6 +71,122 @@ public class DACArecipient
   private int birthday, validFromDate, expirationDate;
   private char sex;
 
+	/***** ACCESSORS *****/
+	/*
+	* Returns surname of calling object
+	* @return String representing surname
+	*/ 
+	public String getSurname() {
+	    return this.surname;
+	}
+	/*
+	* Returns given name of calling object
+	* @return String representing given name
+	*/ 
+    public String getGivenName() {
+	    return this.givenName;
+	}
+	/*
+	* Returns uscis number of calling object
+	* @return String representing uscis number
+	*/ 
+	public String getUscisNumber() {
+	    return this.uscisNumber;
+	}
+	/*
+	* Returns country of origin of calling object
+	* @return String representing country of origin
+	*/ 
+	public String getCountryOfOrigin() {
+	    return this.countryOfOrigin;
+	}
+	/*
+	* Returns birthday of calling object
+	* @return int representing birthday
+	*/ 
+	public int getBirthday() {
+	    return this.birthday;
+	}
+	/*
+	* Returns birthday of calling object
+	* @return int representing birthday
+	*/ 
+	public int getValidFromDate() {
+	    return this.validFromDate;
+	}
+	/*
+	* Returns exipration date of calling object
+	* @return int representing expiration date
+	*/ 
+	public int getExpirationDate() {
+	    return this.expirationDate;
+	}
+	/*
+	* Returns sex of calling object
+	* @return char representing sex
+	*/ 
+	public char getSex() {
+	    return this.sex;
+	}
+	
+	/***** MUTATORS *****/
+	/*
+    * Sets surname to parameter value of calling objects
+    * @ param surname String representing last name, assume it exists and is valid
+    */
+	public void setSurname(String surname) {
+	    this.surname = surname;
+	}
+	/*
+	* Sets givenName to parameter value of calling objects
+    * @ param givenName String representing given name, assume it exists and is valid
+	*/ 
+    public void setGivenName(String givenName) {
+	    this.givenName = givenName;
+	}
+	/*
+	* Sets uscisNumber to parameter value of calling objects
+    * @ param uscisNumber String representing 3-part USCIS number, with dashes
+	*/ 
+	public void setUscisNumber(String uscisNumber) {
+	   this.uscisNumber= uscisNumber;
+	}
+	/*
+	* Sets countryOfOrigin to parameter value of calling objects
+    * @ param countryOfOrigin country name, assume valid country
+	*/ 
+	public void setCountryOfOrigin(String countryOfOrigin) {
+	    this.countryOfOrigin = countryOfOrigin;
+	}
+	/*
+	* Sets birthday to parameter value of calling objects
+    * @ param birthday Julian Day Number for birthday
+	*/ 
+	public void setBirthday(int birthday) {
+	    this.birthday = birthday;
+	}
+	/*
+	* Sets validFromDate to parameter value of calling objects
+    * @ param validFromDate Julian Day Number for valid from date
+	*/ 
+	public void setValidFromDate(int validFromDate) {
+	    this.validFromDate = validFromDate;
+	}
+	/*
+	* Sets expirationDate to parameter value of calling objects
+    * @ param expirationDate Julian Day Number for expiration date
+	*/ 
+	public void setExpirationDate(int expirationDate) {
+	    this.expirationDate = expirationDate;
+	}
+	/*
+	* Sets sex to parameter value of calling objects
+    * @ param sex char representing sex
+	*/ 
+	public void setSex(char sex) {
+	    this.sex = sex;
+	}
+    
   /**DESCRIPTION: Assigns parameters to corresponding instance variables of calling DACArecipient. */
 	public void setAll(String surname, String givenName, String uscisNumber, String countryOfOrigin, int birthday, int validFromDate, int expirationDate, char sex)
 	{
@@ -84,6 +200,7 @@ public class DACArecipient
 		this.sex = sex;
 	}
 
+	/***** OTHER REQUIRED METHODS *****/
 	/* DESCRIPTION: Creates a string of all the calling DACArecipient's instance variables separated by commas and a single space.*/
 	public String toString() {
 	    return String.format("%s, %s, %s, %s, %d, %d, %d, %c", surname, givenName, uscisNumber, countryOfOrigin, birthday, validFromDate, expirationDate, sex);
