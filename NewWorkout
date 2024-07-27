@@ -120,7 +120,7 @@ public class NewWorkout
   * @ param numberOfReps int representing number of reps
   * @ param expectedDuration double representing expected duration
   */
-  public void setAll(String workoutName, String givenName, int numberOfSets, int numberOfReps, double expectedDuration) {
+  public void setAll(String workoutName, String muscleGroup, int numberOfSets, int numberOfReps, double expectedDuration) {
       this.setWorkoutName(workoutName);
       this.setMuscleGroup(muscleGroup);
       this.setNumberOfSets(numberOfSets);
@@ -137,6 +137,28 @@ public class NewWorkout
   */
   public String toString() {
     return "Workout Name: " + this.workoutName + "\nMuscle Group: " + this.muscleGroup + "\nNumber of Sets: " + this.numberOfSets + "\nNumber of Reps: " + this.numberOfReps + "\nExpected Duration: " + this.expectedDuration;
+  }
+
+  /*
+  * Default constructor
+  */
+  public NewWorkout() {
+    this.workoutName = "Workout Name";
+    this.muscleGroup = "Muscle Group";
+    this.numberOfSets = 0;
+    this.numberOfReps = 0;
+    this.expectedDuration = 0;
+  }
+  /*
+  * Full construtor
+  */
+  public NewWorkout(String workoutName, String muscleGroup, int numberOfSets, int numberOfReps, double expectedDuration) {
+    setAll(workoutName, muscleGroup, numberOfSets, numberOfReps, expectedDuration);
+  }
+  
+  /*DESCRIPTION: Compares workout names. If all are equal then returns true, otherwise returns false.*/
+  public boolean equals(NewWorkout other) {
+      return this.workoutName.equals(other.workoutName);
   }
 
 }
